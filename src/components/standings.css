@@ -1,0 +1,13 @@
+/* 
+    Custom CSS for some table row colors
+*/
+
+.table .mlb-red th{
+    color: white;
+    background-color: #bf0d3e;
+  }
+  
+ .table .mlb-blue td{
+    background-color: #041e42;
+    color: white;
+  }
