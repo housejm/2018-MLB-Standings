@@ -69,6 +69,8 @@ class Standings extends Component{
                 throw new Error('There was an error with the data retrieved from the API at' + apiUrl + '. Please check settings.');
             }
         }
+        // Error message is printed to the web console (usually found under Developer Tools)
+        // If I were extending this to a full on web application I would create components to print out the errors
         catch(error)
         {
             console.log(error);
@@ -163,7 +165,7 @@ class Standings extends Component{
             }
         );
 
-        // sort each array in order of win/loss ratio
+        // Sort each array in order of win/loss ratio
         alEast.sort(this.compareRatios);
         alCentral.sort(this.compareRatios);
         alWest.sort(this.compareRatios);
@@ -171,7 +173,7 @@ class Standings extends Component{
         nlCentral.sort(this.compareRatios);
         nlWest.sort(this.compareRatios);
 
-        // store each division in its respective league in the application state
+        // Store each division in its respective league in the application state
         this.setState({
             americanLeague: {east: alEast, west: alWest, central: alCentral},
             nationalLeague: {east: nlEast, west: nlWest, central: nlCentral}
