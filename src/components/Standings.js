@@ -3,8 +3,10 @@ import {getStandingsData} from '../api/api';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import './standings.css';
 
-// TeamDetail component. 
-// This builds the table row for each team's statistics to be displayed
+/** TeamDetail component. 
+**  This builds the table row for each team's statistics to be displayed.
+**  Used in the printDivisionStandings function
+*/
 const TeamDetail = props => (
     <tr>
         <td>{props.standing}</td>
@@ -214,7 +216,7 @@ class Standings extends Component{
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope='col'>#</th>
+                                <th scope='col'></th>
                                 <th scope='col'>Team</th>
                                 <th scope='col'>Wins</th>
                                 <th scope='col'>Losses</th>
@@ -223,15 +225,18 @@ class Standings extends Component{
                             <tr className='mlb-blue'>
                                 <td colSpan='5'>AL East</td>
                             </tr>
+                           
                             {/* Call printDivisionStandings to retrieve the array of TeamDetail component rows */}
                             { this.printDivisionStandings(this.state.americanLeague.east) }
                             <tr className='mlb-blue'>
                                 <td colSpan='5'>AL Central</td>
                             </tr>
+                           
                             { this.printDivisionStandings(this.state.americanLeague.central) }
                             <tr className='mlb-blue'>
                                 <td colSpan='5'>AL West</td>
                             </tr>
+                            
                             { this.printDivisionStandings(this.state.americanLeague.west) }
                         </tbody>
                     </table>
@@ -244,7 +249,7 @@ class Standings extends Component{
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope='col'>#</th>
+                                <th scope='col'></th>
                                 <th scope='col'>Team</th>
                                 <th scope='col'>Wins</th>
                                 <th scope='col'>Losses</th>
